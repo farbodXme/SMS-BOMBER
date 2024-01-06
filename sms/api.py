@@ -4,7 +4,7 @@ def send_otp_requests(number):
         'paaakar': ('https://api.paaakar.com/v1/customer/register-login?version=new1', {'mobile': '0' + number}),
         'ketabweb': ('https://ketabweb.com/login/?usernameCheck=1', {'username': '0' + number}),
         'azarbadbook': ('https://azarbadbook.ir/ajax/login_j_ajax_ver/', {'phone': number}),
-        'cheshmandazketab': ('https://www.cheshmandazketab.ir/Register', {'phone': '0' + number,login:'1'}),
+        'cheshmandazketab': ('https://www.cheshmandazketab.ir/Register', {'phone': '0' + number,'login':'1'}),
         'ketabir': ('https://sso-service.ketab.ir/api/v2/signup/otp?Mobile=0'+number+'&OtpSmsType=1', None),
         'snappshop': ('https://apix.snappshop.co/auth/v1/pre-login?lat=35.77331&lng=51.418591', {'mobile': '0' + number}),
         'pashikshoes': ('https://api.pashikshoes.com/v1/customer/register-login', {'mobile': '0' + number}),
