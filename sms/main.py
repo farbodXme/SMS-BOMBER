@@ -6,7 +6,7 @@ init()
 
 # Receive phone number input from the user
 try:
-    number = input("By"+ ' ' + Fore.RED +"FARBODxME"+ '\n' + Fore.GREEN + "Enter A Phone Number (9**********): ")
+    number = input("By"+ ' ' + Fore.RED +"FARBODxME"+ '\n' + Fore.GREEN + "Enter A Phone Number (9*********): ")
 
     # Get APIs from api.py
     apis = send_otp_requests(number)
