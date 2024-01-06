@@ -15,4 +15,7 @@
 - python main.py
 - Set Phone Number With out ---> 0 <---  <h3>Example : ( 901****** )</h3>
 
-
+# Views :
+<a href="https://visitcount.itsvg.in">
+  <img src="https://visitcount.itsvg.in/api?id=Mr-akhoundi&label=%20Views&icon=5&pretty=false" />
+</a>
