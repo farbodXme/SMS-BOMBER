@@ -1,4 +1,4 @@
-from api import send_otp_requests
+from api import send_otp_requests,send_otp_requests_json
 import requests #pip install requests
 import pyfiglet #pip install requests
 from colorama import Fore,init #pip install colorama
@@ -16,7 +16,7 @@ try:
 
     servers = int(input(Fore.GREEN+"Enter Number ------> "))
     if(servers==1):
-        number = input(Fore.GREEN+"Enter Number Phone (Exm : 901*******) ------> ")
+        number = str(input(Fore.GREEN+"Enter Number Phone (Exm : 901*******) ------> "))
     # Get APIs from api.py
         apis = send_otp_requests(number)
 
@@ -31,10 +31,11 @@ try:
                     
                 except requests.exceptions.RequestException:
                     pass
+                    
     if(servers==2):
         # Get APIs from api.py
-        number = input(Fore.GREEN+"Enter Number Phone (Exm : 901*******) ------> ")
-        apis2 = send_otp_requests(number)
+        number = str(input(Fore.GREEN+"Enter Number Phone (Exm : 901*******) ------> "))
+        apis2 = send_otp_requests_json(number)
         for _ in range(50):
             for url2, payload2, in apis2:
                 try:
