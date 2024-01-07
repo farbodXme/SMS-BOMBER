@@ -11,9 +11,9 @@
 <br>
 - git clone https://github.com/Mr-akhoundi/SMS-BOMBER.git
 <br>
-- pip install -r requirements.txt
+- cd SMS-BOMBER/sms
 <br>
-- cd SMS-BOMBER
+- pip install -r requirements.txt
 <br>
 - python main.py
 - Set Phone Number With out ---> 0 <---  <h3>Example : ( 901****** )</h3>
