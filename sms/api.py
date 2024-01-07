@@ -164,12 +164,18 @@ def send_otp_requests(number):
         })
 
     }
-    url2_payload2_mapjson = {
+    return list(url_payload_map.values())
+
+
+ #_______________JSON DATA LINK API ___________________________
+def send_otp_requests_json(number):
+    url2_payload2_map = {
         'eaccount': ('https://eaccount.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
         'queenaccessories': ('https://queenaccessories.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
         'rastaraccessory': ('https://rastaraccessory.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
         'vinaaccessory': ('https://vinaaccessory.com/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""})
         
     }
-    return list(url_payload_map.values())
-    return list(url2_payload2_mapjson.values())
+
+    return list(url2_payload2_map.values())
+    
