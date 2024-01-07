@@ -14,7 +14,7 @@ print( Fore.WHITE+"SELECT Server SMS-Bomber:" + '\n' + Fore.RED + "--> 1" + Fore
 # Receive phone number input from the user
 try:
 
-    servers = input(Fore.GREEN+"Enter Number ------> ")
+    servers = int(input(Fore.GREEN+"Enter Number ------> "))
     if(servers==1):
         number = input(Fore.GREEN+"Enter Number Phone (Exm : 901*******) ------> ")
     # Get APIs from api.py
