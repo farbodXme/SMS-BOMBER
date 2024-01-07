@@ -165,10 +165,10 @@ def send_otp_requests(number):
 
     }
     url2_payload2_mapjson = {
-        'eaccount': ('https://eaccount.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number})
-        'queenaccessories': ('https://queenaccessories.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number})
-        'rastaraccessory': ('https://rastaraccessory.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number})
-        'vinaaccessory': ('https://vinaaccessory.com/api/v1/sessions/login_request', {"mobile_phone" : "0" + number})
+        'eaccount': ('https://eaccount.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
+        'queenaccessories': ('https://queenaccessories.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
+        'rastaraccessory': ('https://rastaraccessory.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
+        'vinaaccessory': ('https://vinaaccessory.com/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""})
         
     }
     return list(url_payload_map.values())
