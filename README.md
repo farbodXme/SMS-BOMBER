@@ -10,6 +10,8 @@
 - pip install requests
 <br>
 - pip install colorama
+<br>
+- pip install pyfiglet
 
 # How To Run SMS - BOMBER : 
 - python main.py
