@@ -1,13 +1,13 @@
 from api import send_otp_requests,send_otp_requests_json
 import requests #pip install requests
-import pyfiglet #pip install requests
+import pyfiglet #pip install pyfiglet
 from colorama import Fore,init #pip install colorama
 
 init()
 print( Fore.RED + "************************************************************")
 logo = pyfiglet.figlet_format("SMS-Bomber", font = "slant")
 print(logo)
-print(Fore.WHITE+"\t \t By : " + Fore.RED + "FARBODxME" + Fore.YELLOW +" & "+Fore.WHITE+"Edit : " + Fore.RED+"Mr-Akhoundi")
+print(Fore.WHITE+"\t \t  By : " + Fore.RED + "FARBODxME" + Fore.YELLOW +" & "+ Fore.RED+"Mr-Akhoundi")
 print("\t \t \t     V 1.0 - 2024")
 print( Fore.WHITE+"SELECT Server SMS-Bomber:" + '\n' + Fore.RED + "--> 1" + Fore.YELLOW + " Server One" + '\n' + Fore.RED + "--> 2" + Fore.YELLOW + " Server Two" )
 
@@ -16,7 +16,7 @@ try:
 
     servers = int(input(Fore.GREEN+"Enter Number ------> "))
     if(servers==1):
-        number = str(input(Fore.GREEN+"Enter Number Phone (Exm : 901*******) ------> "))
+        number = str(input(Fore.GREEN+"Enter Phone Number With out ---> 0 <--- : "))
     # Get APIs from api.py
         apis = send_otp_requests(number)
 
@@ -34,7 +34,7 @@ try:
                     
     if(servers==2):
         # Get APIs from api.py
-        number = str(input(Fore.GREEN+"Enter Number Phone (Exm : 901*******) ------> "))
+        number = str(input(Fore.GREEN+"Enter Phone Number With out ---> 0 <--- :"))
         apis2 = send_otp_requests_json(number)
         for _ in range(50):
             for url2, payload2, in apis2:
