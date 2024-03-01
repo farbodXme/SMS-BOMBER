@@ -32,9 +32,16 @@ try:
                     response = requests.post(url, json=payload)
                 if response.status_code == 200:
                     print( Fore.RED + number + ' ' + Fore.GREEN + "successfully" + ' ' + Fore.LIGHTBLACK_EX + '('+ url +')' +  '.' )
+<<<<<<< HEAD
 
             except requests.exceptions.RequestException:
                 pass
 
+=======
+                
+            except requests.exceptions.RequestException:
+                pass
+                
+>>>>>>> bebf4292818362036bf99d3a156614f4683511d9
 except KeyboardInterrupt:
     print("\nGoodbye!")
