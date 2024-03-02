@@ -8,7 +8,7 @@ print( Fore.RED + "************************************************************"
 logo = pyfiglet.figlet_format("SMS-Bomber", font = "slant")
 print(logo)
 print(Fore.WHITE+"\t \t  By : " + Fore.RED + "FARBODxME" + Fore.YELLOW +" & "+ Fore.RED+"Mr-Akhoundi")
-print("\t \t \t     V 1.1.0 - 2024")
+print("\t \t \t     V 1.1.0 - 2024 ")
 print( Fore.WHITE+"SELECT Server SMS-Bomber:" + '\n' + Fore.RED + "--> 1" + Fore.YELLOW + " Server One" + '\n' + Fore.RED + "--> 2" + Fore.YELLOW + " Server Two" )
 
 # get phone number from the user
